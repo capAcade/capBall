@@ -1,0 +1,22 @@
+{
+  "name": "capball",
+  "version": "1.0.0",
+  "description": "pinball game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capAcade/capBall.git"
+  },
+  "author": "Eduard Wu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/capAcade/capBall/issues"
+  },
+  "homepage": "https://github.com/capAcade/capBall#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
