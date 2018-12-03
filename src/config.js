@@ -55,8 +55,8 @@ export default class Config {
             new Path(371, 932, this.PATHS.APRON_RIGHT, this.COLORS.OUTER).path
         ]
         this.keys = {
-            leftPaddle: 'V', 
-            rightPaddle: 'L', 
+            leftPaddle: 'v', 
+            rightPaddle: 'l', 
             shooter: 'f'
         }
         this.demoMode = false;
