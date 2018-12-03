@@ -1,22 +1,25 @@
 {
-  "name": "capball",
+  "name": "pinball",
   "version": "1.0.0",
-  "description": "pinball game",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/capAcade/capBall.git"
+    "url": "git+https://github.com/hansblum/flipper"
   },
-  "author": "Eduard Wu",
+  "author": "Hans Blum <jhlblum@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/capAcade/capBall/issues"
-  },
-  "homepage": "https://github.com/capAcade/capBall#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "jquery": "^3.3.1",
+    "matter-attractors": "^0.1.6",
+    "matter-js": "^0.14.2",
+    "poly-decomp": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-google": "^0.11.0"
   }
 }
