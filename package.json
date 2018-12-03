@@ -12,12 +12,7 @@
   },
   "author": "Hans Blum <jhlblum@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "jquery": "^3.3.1",
-    "matter-attractors": "^0.1.6",
-    "matter-js": "^0.14.2",
-    "poly-decomp": "^0.3.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-google": "^0.11.0"
