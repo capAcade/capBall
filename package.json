@@ -1,5 +1,5 @@
 {
-  "name": "pinball",
+  "name": "capball",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hansblum/flipper"
+    "url": "git+https://github.com/capAcade/capBall.git"
   },
   "author": "Hans Blum <jhlblum@gmail.com>",
   "license": "MIT",
