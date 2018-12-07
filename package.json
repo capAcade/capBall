@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "browser-sync start --server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,7 +13,12 @@
   },
   "author": "Hans Blum <jhlblum@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "matter-attractors": "^0.1.6",
+    "matter-js": "^0.14.2",
+    "poly-decomp": "^0.3.0"
+  },
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-google": "^0.11.0"
