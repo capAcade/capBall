@@ -3,6 +3,22 @@ import Paddle from './paddle.js'
 import Stopper from './stopper.js'
 import Config from './config.js'
 import Launcher from './launcher.js';
+
+
+var keys = {};
+function keyHandle(event) {
+  const keyName = event.type;
+  
+  keys[event.key] = event.type === 'keydown';
+  if(keys['1'] && keys['2']){
+  var url = "http://"+window.location.hostname+":"+window.location.port+'/index.html';
+  	window.location = url;
+  }
+};
+
+document.addEventListener('keydown',keyHandle);
+document.addEventListener('keyup',keyHandle);
+
 // plugins
 Matter.use(MatterAttractors);
 

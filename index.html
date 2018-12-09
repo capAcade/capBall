@@ -7,20 +7,49 @@
 <body>
     <h1>PINBALL</h1>
     <h2 class="container">High Score<span class="right score high-score"></span></h2>
-    <a href="game.html">
+    <a id="game" href="game.html">
         <img class="button" src="src/img/single-player.svg">
         <h3 class="col">Play on CapMap arcade</h3>
     </a>
-    <a href="game.html#demo" class="demo choice">
+    <a id="demo" href="game.html#demo" class="demo choice">
         <img class="button" src="src/img/two-player.svg">
         <h3>DEMO</h3>
     </a>
-    <a href="game.html">
+    <a id="home" href="game.html">
         <img class="button" src="src/img/home.svg">
         <h3 class="col">Back to CAPMAN main menu</h3>
     </a>
     <script>
+
+window.onload = function () { 
+
+       var keys = {};
+function keyHandle(event) {
+  const keyName = event.type;
+  
+  keys[event.key] = event.type === 'keydown';
+  if(keys['1'] && keys['2']){
+  var url = "http://"+window.location.hostname+":"+window.location.port+'/index.html';
+  	window.location = url;
+  }
+
+  if(event.key === '1'){
+    document.getElementById("game").click();
+  }
+  if(event.key === '2'){
+    document.getElementById("demo").click();
+  }
+
+};
+
+document.addEventListener('keydown',keyHandle);
+document.addEventListener('keyup',keyHandle);
         document.querySelector('.high-score').innerHTML = localStorage.getItem('highScore')
+
+
+ }
+
+ 
     </script>
 </body>
 </html>
