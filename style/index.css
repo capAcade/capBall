@@ -6,7 +6,7 @@ html {
 }
 body {
     max-width: 996px;
-    margin: margin: 23px;
+    margin: 23px auto 23px auto;
     color: white;
     padding: 12px;
 }
