@@ -49,17 +49,11 @@ body {
 .trigger {
   appearance: none;
 	position: absolute;
-	width: 80px;
-	height: 80px;
+	width: 64px;
+	height: 64px;
 	bottom: 10px;
   border: 0;
 	border-radius: 50%;
-  color: inherit;
-	background-color: #e64980;
-	text-align: center;
-	line-height: 80px;
-	font-size: 1.25rem;
-  text-transform: inherit;
 	cursor: pointer;
 	user-select: none;
   outline: none;

@@ -6,7 +6,7 @@ html {
 }
 body {
     max-width: 996px;
-    margin: 0 auto 0 auto;
+    margin: margin: 23px;
     color: white;
     padding: 12px;
 }
@@ -28,9 +28,10 @@ a {
 }
 
 a:active, a:hover, a:focus {
-    background: fuchsia;
-    border: none;
-    // background-color: #12abdb;
+    outline-style: none;
+    border-color: transparent;
+    box-shadow: none; 
+    background-color: rgba(32,32,32,0.333);
 }
 
 li {

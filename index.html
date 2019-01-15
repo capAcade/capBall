@@ -9,7 +9,7 @@
     <h2 class="container">High Score<span class="right score high-score"></span></h2>
     <a id="game" href="game.html">
         <img class="button" src="src/img/single-player.svg">
-        <h3 class="col">Play on CapMap arcade</h3>
+        <h3 class="col">PLAY</h3>
     </a>
     <a id="demo" href="game.html#demo" class="demo choice">
         <img class="button" src="src/img/two-player.svg">
@@ -22,35 +22,40 @@
     <script>
 
 window.onload = function () { 
+    const gameLauncherUrl = url = "http://"+window.location.hostname+":"+window.location.port+'/index.html';
 
-       var keys = {};
-function keyHandle(event) {
-  const keyName = event.type;
-  
-  keys[event.key] = event.type === 'keydown';
-  if(keys['1'] && keys['2']){
-  var url = "http://"+window.location.hostname+":"+window.location.port+'/index.html';
-  	window.location = url;
-  }
+    var keys = {};
+    function keyHandle(event) {
+        const keyName = event.type;
+        keys[event.key] = event.type === 'keydown';
+        if(keys['1'] && keys['2']){
+  	        window.location = gameLauncherUrl;
+        }
+        if(event.key === '1'){
+            document.getElementById("game").click();
+        }
+        if(event.key === '2'){
+            document.getElementById("demo").click();
+        }
 
-  if(event.key === '1'){
-    document.getElementById("game").click();
-  }
-  if(event.key === '2'){
-    document.getElementById("demo").click();
-  }
-
+    }
+    document.addEventListener('keydown',keyHandle);
+    document.addEventListener('keyup',keyHandle);
+    document.querySelector('.high-score').innerHTML = localStorage.getItem('highScore')
+    document.querySelector('body').addEventListener('keyup', (event) => {
+        switch(event.key) {
+            case '1': 
+                document.location.href='./game.html'
+                break;
+            case '2':
+                document.location.href='./game.html#demo'
+                break;
+            case 'Backspace': 
+                document.location.href='http://localhost:8080/launcher.html'
+                break;
+        }
+    })
 };
-
-document.addEventListener('keydown',keyHandle);
-document.addEventListener('keyup',keyHandle);
-        document.querySelector('.high-score').innerHTML = localStorage.getItem('highScore')
-
-
- }
-
- 
     </script>
 </body>
 </html>
-  

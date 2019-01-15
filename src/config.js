@@ -57,12 +57,15 @@ export default class Config {
         this.keys = {
             leftPaddle: 'v', 
             rightPaddle: 'l', 
-            shooter: 'f'
+            shooter: 'f',
+            back: '1'
         }
         this.demoMode = false;
         this.urls = {
             backgroundImage : 'img/background.svg'
         }
+
+        this.ballsLeft = 3;
     }
     enableDemoMode() {
         this.demoMode = true;
@@ -72,7 +75,8 @@ export default class Config {
         this.keys = {
             leftPaddle: 'ArrowLeft', 
             rightPaddle: 'ArrowRight',
-            shooter: ' '
+            shooter: ' ', 
+            back: 'Backspace'
         }
     }
 

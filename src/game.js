@@ -72,10 +72,16 @@ class PinballGame {
         this.stopperGroup = Matter.Body.nextGroup(true);
         this.currentScore = 0;
         try {
-            this.highScore = localStorage.getItem('highScore');
+            this.highScore = parseInt(localStorage.getItem('highScore'));
+            if (this.highScore == NaN)  {
+                console.log('highScore reset', this.highScore)
+                this.highScore = 0
+            }
         } catch (SecurityError) {
             this.highScore = 0;
         }
+
+        this.ballsLeft = config.ballsLeft;
         this.maxVelocity = 0;
         this.createStaticBodies();
         this.createPaddles();
@@ -135,6 +141,14 @@ class PinballGame {
 
     }
 
+    ballLost() {
+        this.ballsLeft--
+        console.log("That ball is lost. You have only ", this.ballsLeft, " balls remaining")
+        if (this.ballsLeft === 0) {
+            this.gameOver()
+        }
+    }
+
     createEvents() {
         // events for when the pinball hits stuff
         Matter.Events.on(this.engine, 'collisionStart', (event) => {
@@ -142,6 +156,7 @@ class PinballGame {
                 if (pair.bodyB.label === 'pinball') {
                     switch (pair.bodyA.label) {
                         case 'reset':
+                            this.ballLost()
                             this.resetPinball();
                             break;
                         case 'bumper':
@@ -159,6 +174,7 @@ class PinballGame {
                                 setTimeout(() => { this.paddleRight.down()}, 250);
                                 break;
                             case 'reset':
+                                this.ballLost()
                                 this.launchPinball()
                                 break;
                         }
@@ -214,6 +230,9 @@ class PinballGame {
             } else if (e.key === this.config.keys.rightPaddle) { // right arrow key
                 this.paddleRight.down()
                 e.stopPropagation()
+            } else if (e.key === this.config.keys.back) {
+                document.location.href = 'index.html'
+                e.stopPropagation()
             } else if (this.waitingForShooter) {
                 if  (e.key ===this.config.keys.shooter) {
                     this.launchPinball()
@@ -225,7 +244,6 @@ class PinballGame {
 
     resetPinball() {
         this.waitingForShooter = true
-        this.updateScore(0);
         Matter.Body.setPosition(this.pinball, { x: 465, y: 957 });
     }
 
@@ -234,6 +252,10 @@ class PinballGame {
             this.launcher.launch()
             this.waitingForShooter = false;
         }
+    }
+
+    gameOver() {
+        window.location.href = 'index.html'
     }
 
     pingBumper(bumper) {
